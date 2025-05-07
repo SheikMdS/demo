@@ -11,6 +11,16 @@ API_KEY = "1234567890abcdef"
 # 2. SQL Injection vulnerability
 @app.route("/user")
 def get_user():
+    """Fetches user information from a database based on provided username.
+    Parameters:
+        - request (Flask request object): Contains the query parameters including 'username'.
+    Returns:
+        - dict: A dictionary containing the fetched user data under the 'result' key.
+    Processing Logic:
+        - Retrieves the 'username' parameter from URL query arguments.
+        - Connects to a SQLite database named 'example.db'.
+        - Executes a SELECT SQL query using the retrieved username.
+        - Closes the database connection after fetching results."""
     username = request.args.get("username")
     conn = sqlite3.connect("example.db")
     cursor = conn.cursor()
