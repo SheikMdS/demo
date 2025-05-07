@@ -45,7 +45,7 @@ def write_file():
         f.write(content)
     return {"status": "written"}
 
-# 6. Missing authentication
+# 6. Missing authentication method
 @app.route("/admin")
 def admin_panel():
     return {"status": "admin access granted"}
