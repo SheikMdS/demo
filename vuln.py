@@ -20,7 +20,7 @@ def get_user():
     conn.close()
     return {"result": result}
 
-# 3. Command Injection vulnerability
+# 3. Command Injection vulnerability Test
 @app.route("/ping")
 def ping():
     ip = request.args.get("ip")
